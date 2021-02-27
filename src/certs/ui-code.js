@@ -5,8 +5,8 @@ var pg = require('pg')
 var config = {
   user: 'app_user',
   host: 'free-tier.gcp-us-central1.cockroachlabs.cloud',
-  database: 'mild-pig-985.hackutdvii',
   port: 26257,
+  database: 'mild-pig-985.hackutdvii',
   ssl: {
     ca: fs.readFileSync('./ca.crt')
       .toString(),
@@ -14,7 +14,9 @@ var config = {
       .toString(),
     cert: fs.readFileSync('./client.app_user.crt')
       .toString()
-  }
+  },
+
+
 }
 
 // Create a pool.
