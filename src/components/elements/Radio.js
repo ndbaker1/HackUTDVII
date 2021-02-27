@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const propTypes = {
   children: PropTypes.node,
@@ -31,7 +31,7 @@ const Radio = ({
   const classes = classNames(
     'form-radio',
     className
-  );
+  )
 
   return (
     <label className={classes}>
@@ -45,10 +45,10 @@ const Radio = ({
       />
       {children}
     </label>
-  );
+  )
 }
 
-Radio.propTypes = propTypes;
-Radio.defaultProps = defaultProps;
+Radio.propTypes = propTypes
+Radio.defaultProps = defaultProps
 
-export default Radio;
+export default Radio

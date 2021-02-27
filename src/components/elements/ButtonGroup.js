@@ -1,5 +1,5 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from 'react'
+import classNames from 'classnames'
 
 const ButtonGroup = ({
   className,
@@ -9,14 +9,14 @@ const ButtonGroup = ({
   const classes = classNames(
     'button-group',
     className
-  );
+  )
 
   return (
     <div
       {...props}
       className={classes}
     />
-  );
+  )
 }
 
-export default ButtonGroup;
+export default ButtonGroup

@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import FormLabel from './FormLabel';
-import FormHint from './FormHint';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import FormLabel from './FormLabel'
+import FormHint from './FormHint'
 
 const propTypes = {
   children: PropTypes.node,
@@ -53,7 +53,7 @@ const Select = ({
     size && `form-select-${size}`,
     status && `form-${status}`,
     className
-  );
+  )
 
   return (
     <>
@@ -70,10 +70,10 @@ const Select = ({
       </select>
       {hint && <FormHint status={status}>{hint}</FormHint>}
     </>
-  );
+  )
 }
 
-Select.propTypes = propTypes;
-Select.defaultProps = defaultProps;
+Select.propTypes = propTypes
+Select.defaultProps = defaultProps
 
-export default Select;
+export default Select

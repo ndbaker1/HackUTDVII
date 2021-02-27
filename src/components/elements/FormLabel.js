@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const propTypes = {
   children: PropTypes.node,
@@ -26,7 +26,7 @@ const FormLabel = ({
     'form-label',
     labelHidden && 'screen-reader',
     className
-  );
+  )
 
   return (
     <label
@@ -36,10 +36,10 @@ const FormLabel = ({
     >
       {children}
     </label>
-  );
+  )
 }
 
-FormLabel.propTypes = propTypes;
-FormLabel.defaultProps = defaultProps;
+FormLabel.propTypes = propTypes
+FormLabel.defaultProps = defaultProps
 
-export default FormLabel;
+export default FormLabel

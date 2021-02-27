@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const propTypes = {
   children: PropTypes.node,
@@ -31,32 +31,32 @@ const Modal = ({
 }) => {
 
   useEffect(() => {
-    document.addEventListener('keydown', keyPress);
-    document.addEventListener('click', stopProgagation);
+    document.addEventListener('keydown', keyPress)
+    document.addEventListener('click', stopProgagation)
     return () => {
-      document.removeEventListener('keydown', keyPress);
-      document.removeEventListener('click', stopProgagation);
-    };    
-  });
+      document.removeEventListener('keydown', keyPress)
+      document.removeEventListener('click', stopProgagation)
+    }    
+  })
 
   useEffect(() => {
-    handleBodyClass();
-  }, [props.show]); 
+    handleBodyClass()
+  }, [props.show]) 
   
   const handleBodyClass = () => {
     if (document.querySelectorAll('.modal.is-active').length) {
-      document.body.classList.add('modal-is-active');
+      document.body.classList.add('modal-is-active')
     } else {
-      document.body.classList.remove('modal-is-active');
+      document.body.classList.remove('modal-is-active')
     }
   }
 
   const keyPress = (e) => {
-    e.keyCode === 27 && handleClose(e);
+    e.keyCode === 27 && handleClose(e)
   }
 
   const stopProgagation = (e) => {
-    e.stopPropagation();
+    e.stopPropagation()
   }
 
   const classes = classNames(
@@ -64,7 +64,7 @@ const Modal = ({
     show && 'is-active',
     video && 'modal-video',
     className
-  );
+  )
 
   return (
     <>
@@ -111,7 +111,7 @@ const Modal = ({
   )
 }
 
-Modal.propTypes = propTypes;
-Modal.defaultProps = defaultProps;
+Modal.propTypes = propTypes
+Modal.defaultProps = defaultProps
 
-export default Modal;
+export default Modal

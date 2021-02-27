@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { SectionProps } from '../../utils/SectionProps';
-import Input from '../elements/Input';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { SectionProps } from '../../utils/SectionProps'
+import Input from '../elements/Input'
 
 const propTypes = {
   ...SectionProps.types,
@@ -33,14 +33,14 @@ const Cta = ({
     hasBgColor && 'has-bg-color',
     invertColor && 'invert-color',
     className
-  );
+  )
 
   const innerClasses = classNames(
     'cta-inner section-inner',
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider',
     split && 'cta-split'
-  );  
+  )  
 
   return (
     <section
@@ -54,7 +54,7 @@ const Cta = ({
           <div className="cta-slogan">
             <h3 className="m-0">
               For previewing layouts and visual?
-              </h3>
+            </h3>
           </div>
           <div className="cta-action">
             <Input id="newsletter" type="email" label="Subscribe" labelHidden hasIcon="right" placeholder="Your best email">
@@ -66,10 +66,10 @@ const Cta = ({
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-Cta.propTypes = propTypes;
-Cta.defaultProps = defaultProps;
+Cta.propTypes = propTypes
+Cta.defaultProps = defaultProps
 
-export default Cta;
+export default Cta

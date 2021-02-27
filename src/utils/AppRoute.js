@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React from 'react'
+import { Route } from 'react-router-dom'
 
 const AppRoute = ({
   component: Component,
@@ -7,7 +7,7 @@ const AppRoute = ({
   ...rest
 }) => {
 
-  Layout = (Layout === undefined) ? props => (<>{props.children}</>) : Layout;
+  Layout = (Layout === undefined) ? props => (<>{props.children}</>) : Layout
 
   return (
     <Route
@@ -17,7 +17,7 @@ const AppRoute = ({
           <Component {...props} />
         </Layout>
       )} />
-  );
+  )
 }
 
-export default AppRoute;
+export default AppRoute

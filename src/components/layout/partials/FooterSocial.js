@@ -1,5 +1,5 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from 'react'
+import classNames from 'classnames'
 
 const FooterSocial = ({
   className,
@@ -9,7 +9,7 @@ const FooterSocial = ({
   const classes = classNames(
     'footer-social',
     className
-  );
+  )
 
   return (
     <div
@@ -63,7 +63,7 @@ const FooterSocial = ({
         </li>
       </ul>
     </div>
-  );
+  )
 }
 
-export default FooterSocial;
+export default FooterSocial

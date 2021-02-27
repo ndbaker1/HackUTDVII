@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const propTypes = {
   children: PropTypes.node,
@@ -31,7 +31,7 @@ const Checkbox = ({
   const classes = classNames(
     'form-checkbox',
     className
-  );
+  )
 
   return (
     <label className={classes}>
@@ -45,10 +45,10 @@ const Checkbox = ({
       />
       {children}
     </label>
-  );
+  )
 }
 
-Checkbox.propTypes = propTypes;
-Checkbox.defaultProps = defaultProps;
+Checkbox.propTypes = propTypes
+Checkbox.defaultProps = defaultProps
 
-export default Checkbox;
+export default Checkbox

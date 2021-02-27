@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const propTypes = {
   children: PropTypes.node,
@@ -23,7 +23,7 @@ const FormHint = ({
     'form-hint',
     status && `text-color-${status}`,
     className
-  );
+  )
 
   return (
     <div
@@ -32,10 +32,10 @@ const FormHint = ({
     >
       {children}
     </div>
-  );
+  )
 }
 
-FormHint.propTypes = propTypes;
-FormHint.defaultProps = defaultProps;
+FormHint.propTypes = propTypes
+FormHint.defaultProps = defaultProps
 
-export default FormHint;
+export default FormHint

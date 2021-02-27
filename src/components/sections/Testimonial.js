@@ -1,7 +1,7 @@
-import React from 'react';
-import classNames from 'classnames';
-import { SectionTilesProps } from '../../utils/SectionProps';
-import SectionHeader from './partials/SectionHeader';
+import React from 'react'
+import classNames from 'classnames'
+import { SectionTilesProps } from '../../utils/SectionProps'
+import SectionHeader from './partials/SectionHeader'
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -30,23 +30,23 @@ const Testimonial = ({
     hasBgColor && 'has-bg-color',
     invertColor && 'invert-color',
     className
-  );
+  )
 
   const innerClasses = classNames(
     'testimonial-inner section-inner',
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider'
-  );
+  )
 
   const tilesClasses = classNames(
     'tiles-wrap',
     pushLeft && 'push-left'
-  );
+  )
 
   const sectionHeader = {
     title: 'Customer testimonials',
     paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
-  };
+  }
 
   return (
     <section
@@ -63,7 +63,7 @@ const Testimonial = ({
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
                     — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
+                  </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
                   <span className="testimonial-item-name text-color-high">Roman Level</span>
@@ -80,7 +80,7 @@ const Testimonial = ({
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
                     — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
+                  </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
                   <span className="testimonial-item-name text-color-high">Diana Rynzhuk</span>
@@ -97,7 +97,7 @@ const Testimonial = ({
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
                     — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
+                  </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
                   <span className="testimonial-item-name text-color-high">Ben Stafford</span>
@@ -113,10 +113,10 @@ const Testimonial = ({
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-Testimonial.propTypes = propTypes;
-Testimonial.defaultProps = defaultProps;
+Testimonial.propTypes = propTypes
+Testimonial.defaultProps = defaultProps
 
-export default Testimonial;
+export default Testimonial

@@ -1,7 +1,7 @@
-import React from 'react';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import Image from '../../elements/Image';
+import React from 'react'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import Image from '../../elements/Image'
 
 const Logo = ({
   className,
@@ -11,7 +11,7 @@ const Logo = ({
   const classes = classNames(
     'brand',
     className
-  );
+  )
 
   return (
     <div
@@ -28,7 +28,7 @@ const Logo = ({
         </Link>
       </h1>
     </div>
-  );
+  )
 }
 
-export default Logo;
+export default Logo

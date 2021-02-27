@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const propTypes = {
   children: PropTypes.node,
@@ -34,7 +34,7 @@ const Switch = ({
   const classes = classNames(
     'form-switch',
     className
-  );
+  )
 
   return (
     <label className={classes}>
@@ -56,10 +56,10 @@ const Switch = ({
         </span>
       }
     </label>
-  );
+  )
 }
 
-Switch.propTypes = propTypes;
-Switch.defaultProps = defaultProps;
+Switch.propTypes = propTypes
+Switch.defaultProps = defaultProps
 
-export default Switch;
+export default Switch
