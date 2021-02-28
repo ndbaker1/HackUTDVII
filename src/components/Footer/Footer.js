@@ -49,6 +49,10 @@ export default function Footer() {
                   Landing
                 </NavLink>
               </NavItem>
+            </Nav>
+          </Col>
+          <Col md="3">
+            <Nav>
               <NavItem>
                 <NavLink to="/register-page" tag={Link}>
                   Register
@@ -61,31 +65,7 @@ export default function Footer() {
               </NavItem>
             </Nav>
           </Col>
-          <Col md="3">
-            <Nav>
-              <NavItem>
-                <NavLink href="https://creative-tim.com/contact-us?ref=blkdsr-footer">
-                  Contact Us
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://creative-tim.com/about-us?ref=blkdsr-footer">
-                  About Us
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://creative-tim.com/blog?ref=blkdsr-footer">
-                  Blog
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://opensource.org/licenses/MIT">
-                  License
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </Col>
-          <Col md="3">
+          {/* <Col md="3">
             <h3 className="title">Follow us:</h3>
             <div className="btn-wrapper profile">
               <Button
@@ -125,7 +105,7 @@ export default function Footer() {
                 Follow us
               </UncontrolledTooltip>
             </div>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </footer>

@@ -19,6 +19,8 @@ import React from "react";
 import classnames from "classnames";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
+// material ui
+import { DataGrid } from '@material-ui/data-grid';
 // reactstrap components
 import {
   Button,
@@ -67,6 +69,39 @@ const carouselItems = [
 
 let ps = null;
 
+const columns = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'firstName', headerName: 'First name', width: 130 },
+  { field: 'lastName', headerName: 'Last name', width: 130 },
+  {
+    field: 'age',
+    headerName: 'Age',
+    type: 'number',
+    width: 90,
+  },
+  {
+    field: 'fullName',
+    headerName: 'Full name',
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    width: 160,
+    valueGetter: (params) =>
+      `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
+  },
+];
+
+const rows = [
+  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+];
+
 export default function ProfilePage() {
   const [tabs, setTabs] = React.useState(1);
   React.useEffect(() => {
@@ -88,7 +123,7 @@ export default function ProfilePage() {
       }
       document.body.classList.toggle("profile-page");
     };
-  },[]);
+  }, []);
   return (
     <>
       <ExamplesNavbar />
@@ -106,54 +141,6 @@ export default function ProfilePage() {
           />
           <Container className="align-items-center">
             <Row>
-              <Col lg="6" md="6">
-                <h1 className="profile-title text-left">Mike Scheinder</h1>
-                <h5 className="text-on-back">01</h5>
-                <p className="profile-description">
-                  Offices parties lasting outward nothing age few resolve.
-                  Impression to discretion understood to we interested he
-                  excellence. Him remarkably use projection collecting. Going
-                  about eat forty world has round miles.
-                </p>
-                <div className="btn-wrapper profile pt-3">
-                  <Button
-                    className="btn-icon btn-round"
-                    color="twitter"
-                    href="https://twitter.com/creativetim"
-                    id="tooltip639225725"
-                    target="_blank"
-                  >
-                    <i className="fab fa-twitter" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip639225725">
-                    Follow us
-                  </UncontrolledTooltip>
-                  <Button
-                    className="btn-icon btn-round"
-                    color="facebook"
-                    href="https://www.facebook.com/creativetim"
-                    id="tooltip982846143"
-                    target="_blank"
-                  >
-                    <i className="fab fa-facebook-square" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip982846143">
-                    Like us
-                  </UncontrolledTooltip>
-                  <Button
-                    className="btn-icon btn-round"
-                    color="dribbble"
-                    href="https://dribbble.com/creativetim"
-                    id="tooltip951161185"
-                    target="_blank"
-                  >
-                    <i className="fab fa-dribbble" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip951161185">
-                    Follow us
-                  </UncontrolledTooltip>
-                </div>
-              </Col>
               <Col className="ml-auto mr-auto" lg="4" md="6">
                 <Card className="card-coin card-plain">
                   <CardHeader>
@@ -302,62 +289,36 @@ export default function ProfilePage() {
             </Row>
           </Container>
         </div>
-        <div className="section">
-          <Container>
-            <Row className="justify-content-between">
-              <Col md="6">
-                <Row className="justify-content-between align-items-center">
-                  <UncontrolledCarousel items={carouselItems} />
-                </Row>
-              </Col>
-              <Col md="5">
-                <h1 className="profile-title text-left">Projects</h1>
-                <h5 className="text-on-back">02</h5>
-                <p className="profile-description text-left">
-                  An artist of considerable range, Ryan — the name taken by
-                  Melbourne-raised, Brooklyn-based Nick Murphy — writes,
-                  performs and records all of his own music, giving it a warm,
-                  intimate feel with a solid groove structure. An artist of
-                  considerable range.
-                </p>
-                <div className="btn-wrapper pt-3">
-                  <Button
-                    className="btn-simple"
-                    color="primary"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <i className="tim-icons icon-book-bookmark" /> Bookmark
-                  </Button>
-                  <Button
-                    className="btn-simple"
-                    color="info"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <i className="tim-icons icon-bulb-63" /> Check it!
-                  </Button>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+
+        {/* <div style={{ height: 400, width: '80%', color: 'white' }} >
+          <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+        </div> */}
+
         <section className="section">
           <Container>
             <Row>
-              <Col md="6">
+              <Col md="6" className="ml-auto mr-auto">
+                <h1 className="profile-title text-center">Contact</h1>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <section className="section">
+          <Container>
+            <Row>
+              <Col md="6" className="ml-auto mr-auto">
                 <Card className="card-plain">
-                  <CardHeader>
-                    <h1 className="profile-title text-left">Contact</h1>
-                    <h5 className="text-on-back">03</h5>
-                  </CardHeader>
+                  {/* <CardHeader> */}
+
+                  {/* <h5 className="text-on-back">03</h5>
+                  </CardHeader> */}
                   <CardBody>
                     <Form>
                       <Row>
                         <Col md="6">
                           <FormGroup>
                             <label>Your Name</label>
-                            <Input defaultValue="Mike" type="text" />
+                            <Input placeholder="John Smith" type="text" />
                           </FormGroup>
                         </Col>
                         <Col md="6">
@@ -371,13 +332,13 @@ export default function ProfilePage() {
                         <Col md="6">
                           <FormGroup>
                             <label>Phone</label>
-                            <Input defaultValue="001-12321345" type="text" />
+                            <Input placeholder="123-456-7890" type="text" />
                           </FormGroup>
                         </Col>
                         <Col md="6">
                           <FormGroup>
-                            <label>Company</label>
-                            <Input defaultValue="CreativeTim" type="text" />
+                            <label>Resource(s) Needed</label>
+                            <Input placeholder="e.g. Fresh Vegetables, etc." type="text" />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -385,7 +346,7 @@ export default function ProfilePage() {
                         <Col md="12">
                           <FormGroup>
                             <label>Message</label>
-                            <Input placeholder="Hello there!" type="text" />
+                            <Input placeholder="Hello there! Would you happen to have blankets?" type="text" />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -396,7 +357,7 @@ export default function ProfilePage() {
                         id="tooltip341148792"
                         type="button"
                       >
-                        Send text
+                        Send Message
                       </Button>
                       <UncontrolledTooltip
                         delay={0}
@@ -408,34 +369,6 @@ export default function ProfilePage() {
                     </Form>
                   </CardBody>
                 </Card>
-              </Col>
-              <Col className="ml-auto" md="4">
-                <div className="info info-horizontal">
-                  <div className="icon icon-primary">
-                    <i className="tim-icons icon-square-pin" />
-                  </div>
-                  <div className="description">
-                    <h4 className="info-title">Find us at the office</h4>
-                    <p>
-                      Bld Mihail Kogalniceanu, nr. 8, <br />
-                      7652 Bucharest, <br />
-                      Romania
-                    </p>
-                  </div>
-                </div>
-                <div className="info info-horizontal">
-                  <div className="icon icon-primary">
-                    <i className="tim-icons icon-mobile" />
-                  </div>
-                  <div className="description">
-                    <h4 className="info-title">Give us a ring</h4>
-                    <p>
-                      Michael Jordan <br />
-                      +40 762 321 762 <br />
-                      Mon - Fri, 8:00-22:00
-                    </p>
-                  </div>
-                </div>
               </Col>
             </Row>
           </Container>

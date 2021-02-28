@@ -36,6 +36,7 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
+
 export default function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
