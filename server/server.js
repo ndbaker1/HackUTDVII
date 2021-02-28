@@ -1,5 +1,9 @@
 const bodyParser = require('body-parser');
-const { getLendersWithItems, pushLendingItem } = require('./db_functions')
+const {
+  getLendersWithItems,
+  pushLendingItem,
+  createNewTable
+} = require('./db_functions')
 
 const app = require('express')()
 const cors = require('cors')
@@ -19,5 +23,6 @@ app.post('/pushLending', (req, res) => {
 })
 
 app.listen(port, () => {
+  createNewTable()
   console.log('SERVER LISTENING ON PORT ' + port)
 })

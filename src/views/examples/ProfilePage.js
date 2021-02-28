@@ -23,7 +23,6 @@ import PerfectScrollbar from "perfect-scrollbar";
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
   FormGroup,
   Form,
@@ -51,6 +50,8 @@ let ps = null;
 
 export default function ProfilePage() {
 
+  const [username, setUsername] = useState('John')
+  const [location, setLocation] = useState('Plano TX')
   const [availableLenders, setAvailableLenders] = useState([])
   const [lendingItems, setLendingItems] = useState([])
   const [requestedItems, setRequestedItems] = useState([])
@@ -77,7 +78,7 @@ export default function ProfilePage() {
     };
   }, []);
 
-  function callRoachDB(requestedItems) {
+  function findLenders(requestedItems) {
     fetch('//' + window.location.hostname + ':8000/findLenders', {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: { 'Content-Type': 'application/json' },
@@ -86,6 +87,13 @@ export default function ProfilePage() {
       .then(response => setAvailableLenders(response))
   }
 
+  function pushLending(data) {
+    fetch('//' + window.location.hostname + ':8000/pushLending', {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data) // body data type must match "Content-Type" header)
+    })
+  }
 
   function ItemList(props) {
     return props.items.map((item) => <tr>
@@ -119,6 +127,16 @@ export default function ProfilePage() {
             src={require("assets/img/path4.png").default}
           />
           <Container className="align-items-center">
+            <Row>
+              <Col className="ml-auto mr-auto">
+                <div style={{ width: '400px', margin: 'auto', paddingBottom: '64px' }}>
+                  <Input onChange={(event) => setUsername(event.target.value)} value={username} placeholder="Name" />
+                  <br />
+                  <Input onChange={(event) => setLocation(event.target.value)} value={location} placeholder="Location" />
+                </div>
+              </Col>
+            </Row>
+
             <Row>
               <Col className="ml-auto mr-auto">
                 <Card className="card-coin card-plain">
@@ -169,7 +187,7 @@ export default function ProfilePage() {
                         <Input onKeyDown={(event) => {
                           if (event.key === 'Enter' && event.target.value.length > 0 && requestedItems.indexOf(event.target.value) === -1) {
                             const newRequested = [...requestedItems, event.target.value]
-                            callRoachDB(newRequested)
+                            findLenders(newRequested)
                             setRequestedItems(newRequested)
                             event.target.value = ''
                           }
@@ -181,13 +199,18 @@ export default function ProfilePage() {
                             </tr>
                           </thead>
                           <tbody>
-                            < ItemList items={requestedItems} setItems={setRequestedItems} itemWatcher={callRoachDB} />
+                            < ItemList items={requestedItems} setItems={setRequestedItems} itemWatcher={findLenders} />
                           </tbody>
                         </Table>
                       </TabPane>
                       <TabPane tabId="tab2">
                         <Input onKeyDown={(event) => {
                           if (event.key === 'Enter' && event.target.value.length > 0 && lendingItems.indexOf(event.target.value) === -1) {
+                            pushLending({
+                              username,
+                              location,
+                              item: event.target.value
+                            })
                             setLendingItems([...lendingItems, event.target.value])
                             event.target.value = ''
                           }
