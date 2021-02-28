@@ -42,7 +42,7 @@
     "classnames": "2.2.6",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
-    "material-ui": "^0.20.2",
+    "material-ui": "^0.15.0",
     "moment": "2.29.1",
     "nouislider": "14.6.3",
     "perfect-scrollbar": "1.5.0",
@@ -89,6 +89,7 @@
   },
   "_id": "blk-design-system-react@1.2.0",
   "devDependencies": {
+    "pg": "^8.5.1",
     "sass": "^1.32.8"
   }
 }
