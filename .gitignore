@@ -28,3 +28,4 @@ secret
 **/*.crt
 **/*.key
 **/*.pass
+**/*secret*
