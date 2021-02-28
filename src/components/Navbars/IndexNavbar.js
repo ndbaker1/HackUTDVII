@@ -80,8 +80,7 @@ export default function IndexNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
-            <span>BLK• </span>
-            Design System React
+            Lend-A-Hand
           </NavbarBrand>
           <button
             aria-expanded={collapseOpen}
@@ -104,7 +103,6 @@ export default function IndexNavbar() {
             <Row>
               <Col className="collapse-brand" xs="6">
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  BLK•React
                 </a>
               </Col>
               <Col className="collapse-close text-right" xs="6">
@@ -119,14 +117,14 @@ export default function IndexNavbar() {
             </Row>
           </div>
           <Nav navbar>
-          <Link to="/profile-page">
-            <Button
-              className="nav-link d-none d-lg-block"
-              color="default"
-            >
-              <i className="tim-icons icon-single-02" /> Profile
+            <Link to="/profile-page">
+              <Button
+                className="nav-link d-none d-lg-block"
+                color="default"
+              >
+                <i className="tim-icons icon-single-02" /> Profile
               </Button>
-              </Link>
+            </Link>
             <NavItem>
               <Link to="/register-page">
                 <Button

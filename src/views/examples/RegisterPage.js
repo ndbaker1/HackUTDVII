@@ -44,6 +44,9 @@ import Footer from "components/Footer/Footer.js";
 import { Link } from "react-router-dom";
 
 export default function RegisterPage() {
+
+
+  const [username, setUsername] = React.useState("");
   const [squares1to6, setSquares1to6] = React.useState("");
   const [squares7and8, setSquares7and8] = React.useState("");
   const [fullNameFocus, setFullNameFocus] = React.useState(false);
@@ -85,7 +88,7 @@ export default function RegisterPage() {
           <div className="content">
             <Container>
               <Row>
-                <Col className="offset-lg-4 offset-md-3" lg="5" md="6">
+                <Col className="offset-md-3" md="6">
                   <div
                     className="square square-7"
                     id="square7"
@@ -121,6 +124,8 @@ export default function RegisterPage() {
                             type="text"
                             onFocus={(e) => setFullNameFocus(true)}
                             onBlur={(e) => setFullNameFocus(false)}
+                            onChange={(event) => setUsername(event.target.value)}
+                            value={username}
                           />
                         </InputGroup>
                         <InputGroup
@@ -174,9 +179,9 @@ export default function RegisterPage() {
                     </CardBody>
                     <CardFooter>
                       <Link to="/profile-page">
-                        <Button className="btn-round" color="primary" size="lg">
+                        <Button className="btn-round" color="primary" size="lg" onClick={() => sessionStorage.setItem('username', username)}>
                           Register
-                      </Button>
+                        </Button>
                       </Link>
                     </CardFooter>
                   </Card>

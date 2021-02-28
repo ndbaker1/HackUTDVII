@@ -50,7 +50,7 @@ let ps = null;
 
 export default function ProfilePage() {
 
-  const [username, setUsername] = useState('John')
+  const [username, setUsername] = useState(sessionStorage.getItem('username') || '')
   const [location, setLocation] = useState('Plano TX')
   const [availableLenders, setAvailableLenders] = useState([])
   const [lendingItems, setLendingItems] = useState([])

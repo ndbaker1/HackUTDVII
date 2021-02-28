@@ -16,8 +16,9 @@
 
 */
 import React from "react";
+import { Link } from "react-router-dom";
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col, NavLink } from "reactstrap";
 
 export default function NucleoIcons() {
   return (
@@ -30,63 +31,32 @@ export default function NucleoIcons() {
       <Container>
         <Row className="justify-content-center">
           <Col lg="8" md="12">
-            <h2 className="title">Nucleo Icons</h2>
+            <h2 className="title">Purpose</h2>
             <h4 className="description">
-              BLK• Design System PRO comes with 100 custom icons made by our
-              friends from NucleoApp. The official package contains over 2.100
-              thin icons which are looking great in combination with BLK• Design
-              System PRO Make sure you check all of them and use those that you
-              like the most.
+              Connect with those in your community by supporting those around you.
+              You can lend a hand, seek support, or be a point of contact to help those in your community overcome any challenges they may be facing by
+              providing any resources you have.
             </h4>
             <div className="btn-wrapper">
-              <Button
-                className="btn-round"
-                color="primary"
-                href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/icons"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                View Demo Icons
+              <NavLink to="/register-page" tag={Link}>
+                <Button
+                  className="btn-round"
+                  color="primary"
+                  rel="noopener noreferrer"
+                >
+                  Start Now
               </Button>
-              <Button
-                className="btn-simple btn-round"
-                color="primary"
-                href="https://nucleoapp.com/?ref=1712"
-                rel="noopener noreferrer"
-                size="lg"
-                target="_blank"
-              >
-                View All Icons
-              </Button>
+              </NavLink>
             </div>
           </Col>
         </Row>
-        <div className="blur-hover">
-          <a href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/icons">
-            <div className="icons-container blur-item on-screen mt-5">
-              {/* Center */}
-              <i className="icon tim-icons icon-coins" />
-              {/* Right 1 */}
-              <i className="icon icon-sm tim-icons icon-spaceship" />
-              <i className="icon icon-sm tim-icons icon-money-coins" />
-              <i className="icon icon-sm tim-icons icon-link-72" />
-              {/* Right 2 */}
-              <i className="icon tim-icons icon-send" />
-              <i className="icon tim-icons icon-mobile" />
-              <i className="icon tim-icons icon-wifi" />
-              {/* Left 1 */}
-              <i className="icon icon-sm tim-icons icon-key-25" />
-              <i className="icon icon-sm tim-icons icon-atom" />
-              <i className="icon icon-sm tim-icons icon-satisfied" />
-              {/* Left 2 */}
-              <i className="icon tim-icons icon-gift-2" />
-              <i className="icon tim-icons icon-tap-02" />
-              <i className="icon tim-icons icon-wallet-43" />
-            </div>
-            <span className="blur-hidden h5 text-primary">
-              Eplore all the 21.000+ Nucleo Icons
+        <div className="blur-hover" style={{ paddingBottom: '50px' }}>
+          <div className="icons-container blur-item on-screen mt-5" style={{ display: 'flex' }}>
+            <img alt="outage roadmap" src={require('assets/img/outage_roadmap.png').default} style={{ margin: 'auto' }} />
+          </div>
+          <span className="blur-hidden" style={{ color: 'black', maxWidth: '400px', fontSize: '1.2rem', textAlign: 'center' }}>
+            Over 5 million Texas citizens struggled without power during the February 2021 Winter Snowstorm
             </span>
-          </a>
         </div>
       </Container>
     </div>
