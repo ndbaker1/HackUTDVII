@@ -92,12 +92,12 @@ export default function ProfilePage() {
       <td>
         {item}
       </td>
-      <td onClick={() => {
+      <td width="30px" height="30px" onClick={() => {
         const newItems = props.items.filter(_item => _item !== item)
         props.itemWatcher ? props.itemWatcher(newItems) : (() => { })()
         props.setItems(newItems)
       }} style={{ cursor: 'pointer' }}>
-        X
+        <i aria-hidden={true} className="tim-icons icon-simple-remove" />
       </td>
     </tr>
     )
@@ -120,7 +120,7 @@ export default function ProfilePage() {
           />
           <Container className="align-items-center">
             <Row>
-              <Col className="ml-auto mr-auto" lg="4" md="6">
+              <Col className="ml-auto mr-auto">
                 <Card className="card-coin card-plain">
                   <CardBody>
                     <Nav
