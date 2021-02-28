@@ -5,10 +5,13 @@ const {
   createNewTable
 } = require('./db_functions')
 
-const app = require('express')()
+const express = require('express')
+const app = express()
 const cors = require('cors')
 app.use(cors())
 app.use(bodyParser.json())
+app.use(express.static(__dirname + '/../build'))
+
 const port = process.env.port || 8000
 
 app.post('/findLenders', (req, res) => {
