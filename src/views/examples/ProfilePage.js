@@ -256,19 +256,12 @@ export default function ProfilePage() {
               </Col>
             </Row>
           </Container>
-        </div>
-
-        <section className="section">
           <Container>
             <Row>
               <Col md="6" className="ml-auto mr-auto">
-                <h1 className="profile-title text-center">Contact</h1>
+                <h1>Contact</h1>
               </Col>
             </Row>
-          </Container>
-        </section>
-        <section className="section">
-          <Container>
             <Row>
               <Col md="6" className="ml-auto mr-auto">
                 <Card className="card-plain">
@@ -332,7 +325,7 @@ export default function ProfilePage() {
               </Col>
             </Row>
           </Container>
-        </section>
+        </div>
         <Footer />
       </div>
     </>
